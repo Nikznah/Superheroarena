@@ -3,22 +3,27 @@ package Arena;
 import java.util.Objects;
 
 /**
- * Супер герой
+ * Класс отвечает за создание супер героя
  */
-public class Hero {
+
+public class SuperHero {
+
+    public enum Universe {DC, MARVEL}
 
     private String name;
+    private Universe universe;
     private int strange;
-    private String universe;
     private String skill;
 
-    public Hero() {}
 
-    public Hero(String name, int strange, String universe, String skill) {
-        this.name = name;
+    public SuperHero() {
+    }
+
+    public SuperHero(String name, int strange, Universe universe, String skill) {
+        setName(name);
         this.strange = strange;
         this.universe = universe;
-        this.skill = skill;
+        setSkill(skill);
     }
 
     public String getName() {
@@ -26,6 +31,8 @@ public class Hero {
     }
 
     public void setName(String name) {
+        if (!checkString(name))
+            throw new IllegalArgumentException("Имя супер героя введено некорректно");
         this.name = name;
     }
 
@@ -34,14 +41,16 @@ public class Hero {
     }
 
     public void setStrange(int strange) {
+        if (strange > 10 || strange < 1)
+            throw new IllegalArgumentException("Сила должна быть числом от 1 до 10");
         this.strange = strange;
     }
 
-    public String getUniverse() {
+    public Universe getUniverse() {
         return universe;
     }
 
-    public void setUniverse(String universe) {
+    public void setUniverse(Universe universe) {
         this.universe = universe;
     }
 
@@ -50,8 +59,16 @@ public class Hero {
     }
 
     public void setSkill(String skill) {
+        if (!checkString(skill))
+            throw new IllegalArgumentException("Название способности введено некорректное");
+        checkString(skill);
         this.skill = skill;
     }
+
+    private static boolean checkString(String word) {
+        return word != null && !("").equals(word.replaceAll("\\s+", ""));
+    }
+
 
     @Override
     public String toString() {
@@ -67,7 +84,7 @@ public class Hero {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Hero hero = (Hero) o;
+        SuperHero hero = (SuperHero) o;
         return strange == hero.strange && name.equals(hero.name) && universe.equals(hero.universe) && skill.equals(hero.skill);
     }
 

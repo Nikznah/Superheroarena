@@ -1,4 +1,5 @@
-import Arena.Hero;
+import Arena.Fight;
+import Arena.SuperHero;
 
 /**
  * Лекция №2: Основные конструкции
@@ -7,12 +8,15 @@ public class Application {
 
     public static void main(String[] args) {
 
-        Hero hero1 = new Hero();
-        hero1.setName("Бэтмэн");
-        hero1.setSkill("деньги");
+        SuperHero hero1 = new SuperHero();
+        hero1.setName(" Ю");
+        hero1.setSkill(" ");
         hero1.setStrange(10);
-        hero1.setUniverse("DC");
+        hero1.setUniverse(SuperHero.Universe.DC);
+        SuperHero hero2 = new SuperHero("Тор",6, SuperHero.Universe.MARVEL," Молоток");
 
-        System.out.println(hero1);
+        Fight.fight(hero1,hero2);
+
+
     }
 }
