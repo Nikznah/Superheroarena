@@ -1,5 +1,7 @@
 package Arena;
 
+import Heroes.SuperHero;
+
 public class Fight {
 
     public static void fight(SuperHero hero1, SuperHero hero2){

@@ -1,4 +1,7 @@
-package Arena;
+package Heroes;
+
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Objects;
 
@@ -6,6 +9,8 @@ import java.util.Objects;
  * Класс отвечает за создание супер героя
  */
 
+@Getter
+@Setter
 public class SuperHero {
 
     public enum Universe {DC, MARVEL}
@@ -14,7 +19,15 @@ public class SuperHero {
     private Universe universe;
     private int strange;
     private String skill;
+    private boolean fly = false;
 
+    public boolean isFly() {
+        return fly;
+    }
+
+    public void setFly(boolean fly) {
+        this.fly = fly;
+    }
 
     public SuperHero() {
     }
