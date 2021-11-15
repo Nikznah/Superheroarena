@@ -6,7 +6,7 @@ public class Flash extends SuperHero {
 
     public Flash() {
         this.setName("Флэш");
-        this.setSkill("Скорость движений");
+        this.setSkill("Сверхскоростной прыжок");
         this.setStrange(7);
         this.setUniverse(SuperHero.Universe.DC);
     }
