@@ -2,9 +2,9 @@ package Heroes.DC;
 
 import Heroes.SuperHero;
 
-public class ManOfsSteel extends SuperHero {
+public class ManOfSteel extends SuperHero {
 
-    public ManOfsSteel() {
+    public ManOfSteel() {
         this.setName("Супермен");
         this.setSkill("Лазер из глазз");
         this.setStrange(10);
