@@ -1,2 +1,2 @@
 # Superheroarena
-fight between two heroes
+fight between two hero

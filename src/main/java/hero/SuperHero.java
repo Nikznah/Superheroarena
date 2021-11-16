@@ -1,23 +1,19 @@
-package Heroes;
-
-import lombok.Getter;
-import lombok.Setter;
+package hero;
 
 import java.util.Objects;
 
 /**
- * Класс отвечает за создание супер героя
+ * Класс Супер Герой
  */
 
-@Getter
-@Setter
+
 public class SuperHero {
 
     public enum Universe {DC, MARVEL}
 
     private String name;
     private Universe universe;
-    private int strange;
+    private int strength;
     private String skill;
     private boolean fly = false;
 
@@ -32,9 +28,9 @@ public class SuperHero {
     public SuperHero() {
     }
 
-    public SuperHero(String name, int strange, Universe universe, String skill) {
+    public SuperHero(String name, int strength, Universe universe, String skill) {
         setName(name);
-        this.strange = strange;
+        setStrength(strength);
         this.universe = universe;
         setSkill(skill);
     }
@@ -49,14 +45,14 @@ public class SuperHero {
         this.name = name;
     }
 
-    public int getStrange() {
-        return strange;
+    public int getStrength() {
+        return strength;
     }
 
-    public void setStrange(int strange) {
-        if (strange > 10 || strange < 1)
+    public void setStrength(int strength) {
+        if (strength > 10 || strength < 1)
             throw new IllegalArgumentException("Сила должна быть числом от 1 до 10");
-        this.strange = strange;
+        this.strength = strength;
     }
 
     public Universe getUniverse() {
@@ -87,7 +83,7 @@ public class SuperHero {
     public String toString() {
         return "Hero{" +
                 "name='" + name + '\'' +
-                ", strange=" + strange +
+                ", strange=" + strength +
                 ", universe=" + universe +
                 ", skill='" + skill + '\'' +
                 '}';
@@ -98,12 +94,12 @@ public class SuperHero {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         SuperHero hero = (SuperHero) o;
-        return strange == hero.strange && name.equals(hero.name) && universe.equals(hero.universe) && skill.equals(hero.skill);
+        return strength == hero.strength && name.equals(hero.name) && universe.equals(hero.universe) && skill.equals(hero.skill);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, strange, universe, skill);
+        return Objects.hash(name, strength, universe, skill);
     }
 }
 
