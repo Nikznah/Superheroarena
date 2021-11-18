@@ -5,11 +5,12 @@ import lombok.Data;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
 /**
- * Класс Супер Герой
+ * Абстрактный класс Супер Герой.
+ * Описывает супер героев.
  */
 
 @Data
-public class SuperHero {
+public abstract class SuperHero {
 
     public enum Universe {DC, MARVEL}
 
@@ -22,11 +23,12 @@ public class SuperHero {
     public SuperHero() {
     }
 
-    public SuperHero(String name, int strength, Universe universe, String skill) {
+    public SuperHero(String name, int strength, Universe universe, String skill, boolean fly) {
         setName(name);
         setStrength(strength);
         setUniverse(universe);
         setSkill(skill);
+        setFly(fly);
     }
 
     public void setName(String name) {
@@ -47,14 +49,16 @@ public class SuperHero {
         }
         this.skill = skill;
     }
-    public void setUniverse(Universe universe){
-        if (universe == null){
+
+    public void setUniverse(Universe universe) {
+        if (universe == null) {
             throw new IllegalArgumentException("Ошибка вселеной");
         }
         this.universe = universe;
     }
-    public void useSkill(){
 
-    }
+
+    public abstract void useSkill();
 }
+
 

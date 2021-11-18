@@ -10,7 +10,13 @@ public class Flash extends SuperHero {
     public Flash(String name,
                  int strength,
                  Universe universe,
-                 String skill) {
-        super(name, strength, universe, skill);
+                 String skill,
+                 boolean fly) {
+        super(name, strength, universe, skill, fly);
+    }
+
+    @Override
+    public void useSkill() {
+        System.out.println("Быстрый бег");
     }
 }

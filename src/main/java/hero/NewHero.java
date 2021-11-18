@@ -1,14 +1,8 @@
-package hero.marvel;
+package hero;
 
-import hero.SuperHero;
+public class NewHero extends SuperHero {
 
-public class IronMan extends SuperHero {
-
-
-    public IronMan() {
-    }
-
-    public IronMan(String name,
+    public NewHero(String name,
                    int strength,
                    Universe universe,
                    String skill,
@@ -18,6 +12,6 @@ public class IronMan extends SuperHero {
 
     @Override
     public void useSkill() {
-        System.out.println("Джарвис");
+        System.out.println("Использую способность" + super.getSkill());
     }
 }
