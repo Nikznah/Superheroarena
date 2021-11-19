@@ -12,6 +12,6 @@ public class NewHero extends SuperHero {
 
     @Override
     public void useSkill() {
-        System.out.println("Использую способность" + super.getSkill());
+        System.out.println("Использую способность " + super.getSkill());
     }
 }
